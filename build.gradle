@@ -27,7 +27,7 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation('org.springframework.boot:spring-boot-starter-web')
-	implementation('org.thymeleaf:thymeleaf-spring5')
+	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
 	runtimeOnly('mysql:mysql-connector-java')
 	compileOnly('org.springframework.boot:spring-boot-configuration-processor')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
