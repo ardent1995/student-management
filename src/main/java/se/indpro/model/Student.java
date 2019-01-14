@@ -1,4 +1,4 @@
-package se.indpro.student;
+package se.indpro.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,7 +16,7 @@ public class Student {
 	}
 
 	public Student(Integer rollNo, String name, String department, Long phone) {
-		super();
+		this();
 		this.rollNo = rollNo;
 		this.name = name;
 		this.department = department;

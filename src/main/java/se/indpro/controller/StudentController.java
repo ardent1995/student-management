@@ -1,4 +1,4 @@
-package se.indpro.student;
+package se.indpro.controller;
 
 import java.util.List;
 
@@ -30,17 +30,17 @@ public class StudentController {
 	@GetMapping("/")
 	public ModelAndView getForm() {
 		ModelAndView modelandView = new ModelAndView();
-		modelandView.setViewName("tableform");
+		modelandView.setViewName("index");
 		return modelandView;
 	}
 //	
 //	@PostMapping("/")
-//	public void addStudent(@RequestBody Student student) {
+//	public void addStudent(@RequestBody Student model) {
 //		
 //	}
 //	
 //	@PutMapping
-//	public void updateStudent(@RequestBody Student student) {
+//	public void updateStudent(@RequestBody Student model) {
 //		
 //	}
 //	
