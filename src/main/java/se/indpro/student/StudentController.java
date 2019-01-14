@@ -27,11 +27,10 @@ public class StudentController {
 		return "<h1>"+request.getParameter("name")+" "+request.getParameter("department")+"</h1>";
 	}
 	
-//	@GetMapping("/")
-	@RequestMapping(value="/",method= RequestMethod.GET)
+	@GetMapping("/")
 	public ModelAndView getForm() {
 		ModelAndView modelandView = new ModelAndView();
-		modelandView.setViewName("hellotext");
+		modelandView.setViewName("tableform");
 		return modelandView;
 	}
 //	
