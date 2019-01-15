@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Student Management</title>
 </head>
 <body>
+<div>
+    <h2>Current Student In the Database</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.rollNo}">Text...</td>
+            <td th:text="${student.name}">Text...</td>
+            <td th:text="${student.department}">Text...</td>
+            <td th:text="${student.phone}">Text...</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <h2>Add A Student</h2>
+    <form th:action="@{/}" method="post">
+        <label>Roll No<input type="text" name="rollNo"/></label>
+        <label>Name<input type="text" name="name"/></label>
+        <label>Department<input type="text" name="department"/></label>
+        <label>Phone<input type="text" name="phone"/></label>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+
+<div>
+    <h2>Update A Student</h2>
+    <form th:action="@{/update}" method="post">
+        <label>Roll No<input type="text" name="rollNo"/></label>
+        <label>Name<input type="text" name="name"/></label>
+        <label>Department<input type="text" name="department"/></label>
+        <label>Phone<input type="text" name="phone"/></label>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+
+<div>
+    <h2>Delete A Student</h2>
+    <form th:action="@{/delete}" method="post">
+        <label>Roll No<input type="text" name="rollNo"/></label>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+
 
 </body>
 </html>

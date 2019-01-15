@@ -1,14 +1,19 @@
 package se.indpro.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Student {
 	@Id
+	@Column(name = "rollno")
 	private Integer rollNo;
+	@Column(name="name")
 	private String name;
+	@Column(name = "department")
 	private String department;
+	@Column(name="phone")
 	private Long phone;
 		
 	public Student() {

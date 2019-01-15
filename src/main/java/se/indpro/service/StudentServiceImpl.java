@@ -28,22 +28,26 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void addAStudent(Student student) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplate.update("INSERT INTO student(rollNo,name,department,phone) VALUES(?,?,?,?)", student.getRollNo(), student.getName(), student.getDepartment(), student.getPhone());
     }
 
     @Override
     public void deleteAStudent(int rollNo) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplate.update("DELETE FROM student WHERE rollNo=" + rollNo);
     }
 
     @Override
     public void updateAStudent(int rollNo, Student student) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplate.update("UPDATE student SET name=?,department=?,phone=? WHERE rollNo=?", student.getName(), student.getDepartment(), student.getPhone(), student.getRollNo());
     }
 
     @Override
     public List<Student> retrieveStudents() {
         List<Student> studentList = new ArrayList<>();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplate.query("SELECT * FROM student", new ResultSetExtractor<List<Student>>() {
             @Override
             public List<Student> extractData(ResultSet rs) throws SQLException, DataAccessException {
